@@ -111,10 +111,6 @@ func slogSeverity(s string) slog.Severity {
 	}
 }
 
-type ColourLogger struct {
-	Writer io.Writer
-}
-
 func Log(evs ...slog.Event) {
 	for _, e := range evs {
 		switch e.Severity {
@@ -133,5 +129,3 @@ func Log(evs ...slog.Event) {
 		}
 	}
 }
-
-func (l ColourLogger) Flush() error { return nil }
