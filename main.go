@@ -4,7 +4,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io"
 	"log"
 	"os"
 	"time"
@@ -56,7 +55,7 @@ func run() error {
 	if !*follow {
 		return nil
 	}
-	t := time.NewTicker(5 * time.Second)
+	t := time.NewTicker(20 * time.Second)
 	for range t.C {
 		err = poll(ctx,client,entries)
 		if err != nil {
